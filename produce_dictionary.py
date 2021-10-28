@@ -56,13 +56,15 @@ print()
 print('------------------------------------------Question 2-------------------------------------------------')
 print("Using 'loc', display the quantity and total sales for 'Orange' and 'Beets' (together)")
 print()
-print(produce.loc[['Quantity Sold','Total Sale'], ['Orange', 'Beets']])
+ob = produce.loc[['Quantity Sold','Total Sale'], ['Orange', 'Beets']]
+print(ob.T)
 print()
 
 print('------------------------------------------Question 3-------------------------------------------------')
 print("Using 'loc', display the total sales for 'Apples' through 'Lettuce'")
 print()
-print(produce.loc[['Total Sale'],'Apples':'Lettuce'])
+al = produce.loc[['Total Sale'],'Apples':'Lettuce']
+print(al.T)
 print()
 
 print('------------------------------------------Question 4-------------------------------------------------')
@@ -81,11 +83,13 @@ print()
 print('------------------------------------------Question 6-------------------------------------------------')
 print("Create a new dataframe for only those produce that have sold between 11,500 to 12,000 (quantity)")
 print()
-# produce2 = produce['Quantity Sold']
-# print(produce2)
-print()
+new_produce = produce[(produce > 11500) & (produce < 12000)]
+print(new_produce.T)
+
 
 print('------------------------------------------Question 7-------------------------------------------------')
 print("What is the total sales for the products in the above new dataframe? (print out ONLY total sales)")
+print()
+print("Total Sales: ",new_produce.loc['Total Sale'].sum())
 
 
