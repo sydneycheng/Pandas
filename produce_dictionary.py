@@ -46,25 +46,44 @@ produce.index = ["Cost Per Pound", "Quantity Sold", "Total Sale"]
 
 print('------------------------------------------Question 1-------------------------------------------------')
 print("Produce that had the highest and lowest sales in total sales (both name of produce and value")
-
-
-
+print()
+#highest sales
+print(produce.loc['Total Sale'].idxmax(), ": ", produce.loc['Total Sale'].max())
+#lowest sales
+print(produce.loc['Total Sale'].idxmin(), ": ", produce.loc['Total Sale'].min())
+print()
 
 print('------------------------------------------Question 2-------------------------------------------------')
 print("Using 'loc', display the quantity and total sales for 'Orange' and 'Beets' (together)")
-
+print()
+print(produce.loc[['Quantity Sold','Total Sale'], ['Orange', 'Beets']])
+print()
 
 print('------------------------------------------Question 3-------------------------------------------------')
 print("Using 'loc', display the total sales for 'Apples' through 'Lettuce'")
+print()
+print(produce.loc[['Total Sale'],'Apples':'Lettuce'])
+print()
 
 print('------------------------------------------Question 4-------------------------------------------------')
 print("Using 'at', update the quantity sold for Apricots to 11,955 and total sales to 44,353.05")
+print()
+produce.at['Quantity Sold', 'Apricots'] = 11955
+produce.at['Quantity Sold', 'Total Sale'] = 44353.05
+print()
 
 print('------------------------------------------Question 5-------------------------------------------------')
 print("What is the average quantity sold across all products? (print out ONLY quantity sold)")
+print()
+print("Average quantity sold: ", produce.loc['Quantity Sold'].mean())
+print()
 
 print('------------------------------------------Question 6-------------------------------------------------')
 print("Create a new dataframe for only those produce that have sold between 11,500 to 12,000 (quantity)")
+print()
+# produce2 = produce['Quantity Sold']
+# print(produce2)
+print()
 
 print('------------------------------------------Question 7-------------------------------------------------')
 print("What is the total sales for the products in the above new dataframe? (print out ONLY total sales)")
