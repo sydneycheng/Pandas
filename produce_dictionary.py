@@ -1,3 +1,5 @@
+import pandas as pd
+
 produce_dictionary = {'Potatoes': [0.86, 12219, 10508],
                       'Okra': [2.26, 12960, 29290],
                       'Fava beans': [2.69, 11703, 31480],
@@ -39,5 +41,32 @@ produce_dictionary = {'Potatoes': [0.86, 12219, 10508],
                       'Kale': [5.02, 12293, 61711],
                       'Bok choy': [1.42, 11565, 16422]}
 
+produce = pd.DataFrame(produce_dictionary)
+produce.index = ["Cost Per Pound", "Quantity Sold", "Total Sale"]
+
+print('------------------------------------------Question 1-------------------------------------------------')
+print("Produce that had the highest and lowest sales in total sales (both name of produce and value")
+
+
+
+
+print('------------------------------------------Question 2-------------------------------------------------')
+print("Using 'loc', display the quantity and total sales for 'Orange' and 'Beets' (together)")
+
+
+print('------------------------------------------Question 3-------------------------------------------------')
+print("Using 'loc', display the total sales for 'Apples' through 'Lettuce'")
+
+print('------------------------------------------Question 4-------------------------------------------------')
+print("Using 'at', update the quantity sold for Apricots to 11,955 and total sales to 44,353.05")
+
+print('------------------------------------------Question 5-------------------------------------------------')
+print("What is the average quantity sold across all products? (print out ONLY quantity sold)")
+
+print('------------------------------------------Question 6-------------------------------------------------')
+print("Create a new dataframe for only those produce that have sold between 11,500 to 12,000 (quantity)")
+
+print('------------------------------------------Question 7-------------------------------------------------')
+print("What is the total sales for the products in the above new dataframe? (print out ONLY total sales)")
 
 
